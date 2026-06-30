@@ -1,5 +1,6 @@
 import argparse
 import logging
+import random
 import time
 import sys
 
@@ -33,7 +34,7 @@ def run_once():
 
             # Lấy nội dung đầy đủ từ trang bài viết
             detail = article_parser.parse(url)
-            time.sleep(config.CRAWL_DELAY_SECONDS)
+            time.sleep(random.uniform(config.CRAWL_DELAY_MIN_SECONDS, config.CRAWL_DELAY_MAX_SECONDS))
 
             # Gộp metadata từ RSS + detail từ HTML
             article = {**meta, **detail}

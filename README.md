@@ -48,7 +48,8 @@ cp .env.example .env
 |------|----------|-------|
 | `MONGODB_URI` | `mongodb://localhost:27017` | Connection string MongoDB |
 | `MONGODB_DB` | `dantri_news` | Tên database |
-| `CRAWL_DELAY_SECONDS` | `1` | Delay giữa các request (giây) |
+| `CRAWL_DELAY_MIN_SECONDS` | `2` | Delay tối thiểu giữa các request (giây) |
+| `CRAWL_DELAY_MAX_SECONDS` | `5` | Delay tối đa giữa các request (giây) |
 | `SCHEDULE_INTERVAL_MINUTES` | `30` | Chu kỳ chạy lại khi dùng --schedule |
 
 ## Cách chạy

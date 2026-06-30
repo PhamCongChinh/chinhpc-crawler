@@ -1,4 +1,5 @@
 import re
+import random
 import time
 import logging
 import feedparser
@@ -90,5 +91,5 @@ def fetch_feed(category: str, rss_url: str) -> list[dict]:
         })
 
     logger.info("Feed [%s]: %d articles", category, len(articles))
-    time.sleep(config.CRAWL_DELAY_SECONDS)
+    time.sleep(random.uniform(config.CRAWL_DELAY_MIN_SECONDS, config.CRAWL_DELAY_MAX_SECONDS))
     return articles
